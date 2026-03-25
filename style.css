@@ -37,7 +37,7 @@ nav {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 10px 15px;
+    padding: 0px 40px;
     position: fixed; /* Keep fixed at the top as per your code */
     top: 0;
     left: 0;
@@ -88,7 +88,7 @@ nav {
 /* Update nav-left to align image and text */
 .nav-left {
     display: flex;
-    align-items: center;
+    align-items: left;
     gap: 12px; /* Space between sdm.png and the college name */
     flex: 1;
 }
