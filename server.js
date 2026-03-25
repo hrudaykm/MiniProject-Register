@@ -62,7 +62,9 @@ app.post('/register', async (req, res) => {
         res.status(500).send("Server Error: Could not send registration.");
     }
 });
+// This line tells the app: Use Render's port, or 3000 if running on my laptop
+const PORT = process.env.PORT || 3000;
 
-app.listen(port, () => {
-    console.log(`🚀 Ventura Server live on port ${port}`);
+app.listen(PORT, '0.0.0.0', () => {
+    console.log(`Server is running on port ${PORT}`);
 });
