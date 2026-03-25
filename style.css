@@ -1,3 +1,10 @@
+html, body {
+    max-width: 100%;
+    overflow-x: hidden; /* Prevents side-to-side shaking */
+    margin: 0;
+    padding: 0;
+    position: relative;
+}
 :root {
     --accent-blue: #00d2ff;
     --glass-bg: rgba(255, 255, 255, 0.05);
@@ -571,5 +578,38 @@ body {
     .center-logo {
         width: 130px;           /* Resizes the Ventura logo */
         margin-top: 10px;
+    }
+}
+@media (max-width: 768px) {
+    nav {
+        display: flex !important;
+        flex-direction: column !important; /* Stacks logos and name vertically */
+        height: auto !important;
+        padding: 15px !important;
+        gap: 10px;
+        align-items: center;
+        text-align: center;
+    }
+
+    .nav-left {
+        flex-direction: column !important;
+        align-items: center !important;
+    }
+
+    .sdm-icon {
+        width: 45px !important;
+        margin-bottom: 5px;
+    }
+
+    .college-full-name {
+        font-size: 10px !important;
+        line-height: 1.3;
+        width: 100%;
+        display: block;
+    }
+
+    .center-logo {
+        width: 110px !important;
+        margin: 0 auto;
     }
 }
