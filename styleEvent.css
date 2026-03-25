@@ -430,3 +430,54 @@ input, select {
     max-width: 100%;
     box-sizing: border-box; /* Crucial: includes padding in the width calculation */
 }
+
+/* Professional Mobile Header Fix */
+@media (max-width: 768px) {
+    nav {
+        display: flex;
+        flex-direction: column; /* Stacks items top-to-bottom */
+        align-items: center;
+        height: auto !important; /* Allows header to expand */
+        padding: 15px 10px !important;
+        gap: 10px; /* Adds clean space between items */
+    }
+
+    .nav-left {
+        flex-direction: column;
+        width: 100%;
+    }
+
+    .sdm-icon {
+        width: 40px; /* Smaller, cleaner icon */
+        margin-bottom: 5px;
+    }
+
+    .college-full-name {
+        font-size: 10px; /* Small but readable */
+        text-align: center;
+        width: 100%;
+        line-height: 1.4;
+        display: block;
+        letter-spacing: 0.5px;
+    }
+
+    .center-logo {
+        width: 100px !important; /* Resizes Ventura logo */
+        margin: 0 auto;
+    }
+}
+/* Stop the shaking */
+html, body {
+    overflow-x: hidden; /* Prevents side-to-side vibration */
+    width: 100%;
+    position: relative;
+    margin: 0;
+    padding: 0;
+}
+
+/* Stabilize the main container */
+main, .hero, .events-list {
+    width: 100%;
+    overflow: hidden;
+    box-sizing: border-box;
+}
