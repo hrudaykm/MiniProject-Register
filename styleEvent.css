@@ -1,9 +1,14 @@
+/* Add this to the VERY TOP of style.css and styleEvent.css */
 html, body {
-    max-width: 100%;
-    overflow-x: hidden; /* Prevents side-to-side shaking */
-    margin: 0;
-    padding: 0;
-    position: relative;
+    width: 100% !important;
+    max-width: 100% !important;
+    overflow-x: hidden !important; /* This is the only way to stop horizontal shaking */
+    margin: 0 !important;
+    padding: 0 !important;
+}
+
+* {
+    box-sizing: border-box !important; /* Prevents padding from adding extra width */
 }
 * {
             margin: 0;
@@ -441,50 +446,44 @@ input, select {
 /* Professional Mobile Header Fix */
 @media (max-width: 768px) {
     nav {
-        display: flex;
-        flex-direction: column; /* Stacks items top-to-bottom */
-        align-items: center;
-        height: auto !important; /* Allows header to expand */
-        padding: 15px 10px !important;
-        gap: 10px; /* Adds clean space between items */
+        display: flex !important;
+        flex-direction: column !important; /* Forces a vertical stack */
+        height: auto !important;
+        padding: 20px 10px !important;
+        gap: 15px !important; /* Space between logo, name, and ventura icon */
+        align-items: center !important;
+        background: #000; /* Ensures a solid background */
     }
 
     .nav-left {
-        flex-direction: column;
-        width: 100%;
+        display: flex !important;
+        flex-direction: column !important;
+        align-items: center !important;
+        width: 100% !important;
     }
 
     .sdm-icon {
-        width: 40px; /* Smaller, cleaner icon */
-        margin-bottom: 5px;
+        width: 50px !important;
+        height: auto !important;
+        margin-bottom: 10px !important;
     }
 
     .college-full-name {
-        font-size: 10px; /* Small but readable */
-        text-align: center;
-        width: 100%;
-        line-height: 1.4;
-        display: block;
-        letter-spacing: 0.5px;
+        font-size: 11px !important;
+        text-align: center !important;
+        line-height: 1.4 !important;
+        width: 90% !important;
+        margin: 0 auto !important;
+        display: block !important;
     }
 
     .center-logo {
-        width: 100px !important; /* Resizes Ventura logo */
-        margin: 0 auto;
+        width: 130px !important;
+        height: auto !important;
+        margin: 10px 0 !important; /* Pushes the Ventura logo away from the text */
     }
-}
-/* Stop the shaking */
-html, body {
-    overflow-x: hidden; /* Prevents side-to-side vibration */
-    width: 100%;
-    position: relative;
-    margin: 0;
-    padding: 0;
-}
 
-/* Stabilize the main container */
-main, .hero, .events-list {
-    width: 100%;
-    overflow: hidden;
-    box-sizing: border-box;
+    #clerk-user-area {
+        margin-top: 5px !important;
+    }
 }
