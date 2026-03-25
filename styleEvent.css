@@ -410,3 +410,23 @@ input[type="file"] {
     text-transform: uppercase; /* Keeps it consistent with your 'CORE' style */
     letter-spacing: 1px;
 }
+/* Prevent horizontal shaking and jumpy layouts */
+body, html {
+    overflow-x: hidden; 
+    width: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+/* Add this to the container holding your 15+ inputs */
+.event-form-container { 
+    min-height: 100vh; /* Ensures the page doesn't shrink while loading */
+    display: block;
+    position: relative;
+}
+
+/* Ensure inputs don't fight for space */
+input, select {
+    max-width: 100%;
+    box-sizing: border-box; /* Crucial: includes padding in the width calculation */
+}
