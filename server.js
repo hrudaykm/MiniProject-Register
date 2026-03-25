@@ -4,167 +4,65 @@ const path = require('path');
 const axios = require('axios');
 
 const app = express();
-const port = 3000;
+// Render uses process.env.PORT, local uses 3000
+const port = process.env.PORT || 3000;
 
-// 1. PASTE YOUR GOOGLE SCRIPT URL HERE
-const GOOGLE_SHEET_URL = "https://script.google.com/macros/s/AKfycbwsXDB4ApCtuC7zVTz5bfaMNkLI3HawG0b7IzJoy0mZ-Hyp94ehU0xPBp1HPgqI25lY/exec";
+// Middleware
 app.use(bodyParser.urlencoded({ extended: true }));
+app.use(bodyParser.json());
 app.use(express.static(__dirname));
+
+// Route to serve your landing page
 app.get('/', (req, res) => {
     res.sendFile(path.join(__dirname, 'frontpage.html'));
 });
 
-// 2. THIS IS THE PART THAT SAVES THE DATA
+// Map your events to the Environment Variables you set in Render
+const webhooks = {
+    "Elite_Enigma": process.env.Elite_Enigma,
+    "The_Management_Matrix": process.env.The_Management_Matrix,
+    "Breaking_Brand": process.env.Breaking_Brand,
+    "The_Boardroom": process.env.The_Boardroom,
+    "Kephalaio_Nexus": process.env.Kephalaio_Nexus,
+    "Handes_Of_Heaven": process.env.Handes_Of_Heaven,
+    "Lens_Of_Patterns": process.env.Lens_Of_Patterns,
+    "Boss_Mode_The_Peaky_Venture": process.env.Boss_Mode_The_Peaky_Venture,
+    "Reel_Royale": process.env.Reel_Royale,
+    "The_Directors_Deck": process.env.The_Directors_Deck,
+    "Variants_Got_Talent": process.env.Variants_Got_Talent,
+    "Face_Of_Derry": process.env.Face_Of_Derry,
+    "Episodes_Of_Echos": process.env.Episodes_Of_Echos,
+    "Bokolly_E_Youkoso": process.env.Bokolly_E_Youkoso,
+    "Over_All_Events": process.env.Over_All_Events
+};
+
+// The Registration Route
 app.post('/register', async (req, res) => {
     try {
-        const formData = {
-            username: req.body.username,
-            email: req.body.user_email,
-            phone: req.body.phone,
-            team: req.body.team_name || "N/A",
-            // New Teammate Data
-            tm2_name: req.body.teammate2_name || "N/A",
-            tm2_email: req.body.teammate2_email || "N/A",
-            event: req.body.event_name
-        };
+        const { username, user_email, phone, event_name, team_name } = req.body;
+        
+        // Find the correct Discord Webhook based on the event name
+        const targetWebhook = webhooks[event_name];
 
-        await axios.post(GOOGLE_SHEET_URL, new URLSearchParams(formData).toString());
-        // ... inside your try block, after axios.post ...
+        if (targetWebhook) {
+            // Send formatted data to Discord
+            await axios.post(targetWebhook, {
+                content: `🚀 **New Registration Received!**\n\n**Event:** ${event_name}\n**Name:** ${username}\n**Email:** ${user_email}\n**Phone:** ${phone}\n**Team:** ${team_name || "Solo"}`
+            });
+            
+            // Redirect to your custom success.html file
+            res.redirect('/success.html');
+        } else {
+            console.error("Webhook not found for event:", event_name);
+            res.status(404).send("Event webhook configuration missing.");
+        }
 
-res.send(`
-            <!DOCTYPE html>
-            <html lang="en">
-            <head>
-                <meta charset="UTF-8">
-                <meta name="viewport" content="width=device-width, initial-scale=1.0">
-                <title>Registration Successful</title>
-                <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
-                <style>
-                    * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Poppins', sans-serif; }
-                    
-                    /* Matches your Elite Enigma theme exactly */
-                    body {
-                        background: url('background.jpg') no-repeat center center fixed;
-                        background-size: cover;
-                        background-color: #0a0a0a;
-                        color: white;
-                        display: flex;
-                        justify-content: center;
-                        align-items: center;
-                        height: 100vh;
-                        overflow: hidden;
-                    }
-                    
-                    .overlay {
-                        position: absolute; top: 0; left: 0; width: 100%; height: 100%;
-                        background: rgba(0, 0, 0, 0.75);
-                        z-index: 1;
-                    }
-
-                    /* The Glass Card */
-                    .success-card {
-                        position: relative;
-                        z-index: 2;
-                        background: rgba(255, 255, 255, 0.05);
-                        backdrop-filter: blur(15px);
-                        border: 1px solid rgba(255, 255, 255, 0.1);
-                        padding: 50px 40px;
-                        border-radius: 20px;
-                        text-align: center;
-                        max-width: 400px;
-                        width: 90%;
-                        box-shadow: 0 10px 30px rgba(0,0,0,0.5);
-                        animation: slideUp 0.6s ease-out;
-                    }
-
-                    /* PhonePe Style Green Circle */
-                    .circle-icon {
-                        width: 90px;
-                        height: 90px;
-                        background: #10B981; /* Premium Green */
-                        border-radius: 50%;
-                        margin: 0 auto 25px;
-                        display: flex;
-                        justify-content: center;
-                        align-items: center;
-                        /* The pop and ripple animation */
-                        animation: popIn 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards, pulse 2s infinite 1s;
-                    }
-
-                    /* The Checkmark */
-                    .checkmark {
-                        width: 25px;
-                        height: 45px;
-                        border: solid white;
-                        border-width: 0 5px 5px 0;
-                        transform: rotate(45deg);
-                        margin-bottom: 10px;
-                        opacity: 0;
-                        animation: drawCheck 0.4s ease-out 0.5s forwards;
-                    }
-
-                    h2 { font-size: 24px; font-weight: 700; margin-bottom: 10px; letter-spacing: 1px; }
-                    p { color: rgba(255, 255, 255, 0.7); font-size: 15px; margin-bottom: 30px; line-height: 1.5; }
-                    .event-highlight { color: #f39c12; font-weight: 600; }
-
-                    /* The Back Button */
-                    .back-btn {
-                        display: inline-block;
-                        padding: 12px 30px;
-                        background: rgba(255, 255, 255, 0.1);
-                        border: 1px solid rgba(255, 255, 255, 0.2);
-                        border-radius: 30px;
-                        color: white;
-                        text-decoration: none;
-                        font-weight: 600;
-                        transition: all 0.3s ease;
-                    }
-
-                    .back-btn:hover {
-                        background: rgba(255, 255, 255, 0.2);
-                        transform: translateY(-2px);
-                    }
-
-                    /* Animations */
-                    @keyframes slideUp {
-                        0% { opacity: 0; transform: translateY(30px); }
-                        100% { opacity: 1; transform: translateY(0); }
-                    }
-                    @keyframes popIn {
-                        0% { transform: scale(0); }
-                        100% { transform: scale(1); }
-                    }
-                    @keyframes drawCheck {
-                        0% { opacity: 0; height: 0; }
-                        100% { opacity: 1; height: 45px; }
-                    }
-                    @keyframes pulse {
-                        0% { box-shadow: 0 0 0 0 rgba(16, 185, 129, 0.5); }
-                        70% { box-shadow: 0 0 0 20px rgba(16, 185, 129, 0); }
-                        100% { box-shadow: 0 0 0 0 rgba(16, 185, 129, 0); }
-                    }
-                </style>
-            </head>
-            <body>
-                <div class="overlay"></div>
-                <div class="success-card">
-                    <div class="circle-icon">
-                        <div class="checkmark"></div>
-                    </div>
-                    <h2>Registration Successful!</h2>
-                    <p>Your details have been securely saved.<br>See you at <span class="event-highlight">${formData.event}</span>!</p>
-                    
-                    <a href="/" class="back-btn">Go back to front page</a>
-                </div>
-            </body>
-            </html>
-        `);
     } catch (error) {
-// ... (rest of your error handling code)
-        res.status(500).send("Error saving data.");
+        console.error("Discord Error:", error.message);
+        res.status(500).send("Server Error: Could not send registration.");
     }
 });
 
 app.listen(port, () => {
-    console.log(`🚀 Ventura Server: http://localhost:${port}`);
+    console.log(`🚀 Ventura Server live on port ${port}`);
 });
