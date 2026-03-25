@@ -528,3 +528,12 @@ body {
                         font-weight: 600;
                         transition: all 0.3s ease;
                     }
+        .event-title-rule {
+    font-size: 40px;          /* Makes it smaller than the title */
+    color: #ffee00;          /* A lighter grey so it doesn't distract */
+    margin-top:5px;        /* Pulls it closer to the title */
+    margin-bottom: 13px;     /* Space before the 'Team Size' section */
+    font-weight: 500;
+    text-transform: uppercase; /* Keeps it consistent with your 'CORE' style */
+    letter-spacing: 1px;
+}
