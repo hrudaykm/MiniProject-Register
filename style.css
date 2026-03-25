@@ -37,7 +37,7 @@ nav {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 0px 40px;
+    padding: 0px 14px;
     position: fixed; /* Keep fixed at the top as per your code */
     top: 0;
     left: 0;
