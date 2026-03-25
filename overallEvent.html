@@ -1,0 +1,663 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OVERALL EVENTS - Registration</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styleEvent.css">
+    <script async crossorigin="anonymous"
+        data-clerk-publishable-key="pk_test_bXVzaWNhbC1jYW1lbC01NC5jbGVyay5hY2NvdW50cy5kZXYk"
+        src="https://allowed-marlin-45.clerk.accounts.dev/npm/@clerk/clerk-js@latest/dist/clerk.browser.js"
+        type="text/javascript"></script>
+</head>
+
+<body>
+
+    <div class="overlay">
+        <div class="container">
+
+            <div class="top-bar">
+                <a href="/" class="back-btn">←</a>
+            </div>
+
+
+            <div class="event-poster">
+                <img src="overall.jpeg" alt="OVERALL EVENTS POSTER"
+                    style="width: 100%; height: 100%; object-fit: cover; border-radius: 15px;">
+                    </div>
+
+
+            <!-- <div class="category">CORE</div> -->
+            <h1 class="event-title">OVERALL TEAM </h1>
+            <!-- <p class="event-subtitle">BUSINESS QUIZ</p> -->
+
+
+            <div class="meta-grid">
+                <!-- <div>
+                <div class="meta-label">Tier</div>
+                <div class="meta-value">GOLD</div>
+            </div>
+            <div>
+                <div class="meta-label">Prize Pool</div>
+                <div class="meta-value">₹15,000</div>
+            </div> -->
+                <!-- <div>
+                    <div class="meta-label">Team Size</div>
+                    <div class="meta-value">2 PER TEAM</div>
+                </div> -->
+            </div>
+            <div class="registration-form">
+                <h3>Register for this event</h3>
+                <div id="loggedOutUI">
+                    <p style="color: #ffb700; margin-bottom: 15px;">⚠️ You must be logged in to register your team.</p>
+                    <button type="button" class="submit-btn" id="loginBtnTrigger">LOGIN TO REGISTER</button>
+                </div>
+                <div id="loggedInUI" style="display: none;">
+                    <form id="registrationForm">
+                        <h4 style="margin: 20px 0 10px; color: #ff4242;">ELITE ENIGMA</h4>
+                        <p class="event-subtitleoverall">BEST MANAGER</p>
+                        <input type="hidden" name="event_name1" value="ELITE ENIGMA">
+
+                        <div class="input-group">
+                            <input type="text" name="username1" placeholder="Your Name(Leader)" required>
+                        </div>
+
+                        <div class="input-group">
+                            <input type="email" name="user_email1" placeholder="Email Address" required>
+                        </div>
+
+                        <div class="input-group">
+                            <input type="text" name="phone1" placeholder="WhatsApp Number" required>
+                        </div>
+
+                        <!-- <div class="input-group">
+                            <input type="text" name="team_name" placeholder="Team Name (Optional)">
+                        </div> -->
+
+                        <h4 style="margin: 20px 0 10px; color: #ff4242;"> VALIENTS GOT TALENT</h4>
+                        <p class="event-subtitleoverall">SHOW YOUR TALENT IN 60 SECONDS</p>
+                        <input type="hidden" name="event_name2" value="VALIENTS GOT TALENT">
+
+                        <div class="input-group">
+                            <input type="text" name="username2" placeholder="Your Name(Leader)" required>
+                        </div>
+
+                        <div class="input-group">
+                            <input type="email" name="user_email2" placeholder="Email Address" required>
+                        </div>
+
+                        <div class="input-group">
+                            <input type="text" name="phone2" placeholder="WhatsApp Number" required>
+                        </div>
+                        <!-- <div class="input-group">
+                            <input type="text" name="team_name" placeholder="Team Name (Optional)">
+                        </div> -->
+
+                        <h4 style="margin: 20px 0 10px; color: #ff4242;">FACE OF DERRY </h4>
+                        <p class="event-subtitleoverall">FACE PAINTING</p>
+                        <input type="hidden" name="event_name3" value="FACE OF DERRY">
+
+                        <div class="input-group">
+                            <input type="text" name="username3" placeholder="Your Name (Leader)" required>
+                        </div>
+                        <div class="input-group">
+                            <input type="email" name="user_email3" placeholder="Email Address" required>
+                        </div>
+                        <div class="input-group">
+                            <input type="text" name="phone3" placeholder="WhatsApp Number" required>
+                        </div>
+
+                        <h4 style="margin: 20px 0 10px; color: #9b59b6;">TEAMMATE DETAILS</h4>
+
+                        <div class="input-group">
+                            <input type="text" name="teammate2_name3" placeholder="Teammate Name" required>
+                        </div>
+                        <div class="input-group">
+                            <input type="email" name="teammate2_email3" placeholder="Teammate Email" required>
+                        </div>
+                        <!-- 
+                        <div class="input-group">
+                            <input type="text" name="team_name" placeholder="Team Name (Optional)">
+                        </div> -->
+
+                        <h4 style="margin: 20px 0 10px; color: #ff4242;">KEPHALAIO NEXUS </h4>
+                        <p class="event-subtitleoverall">FINANCE</p>
+                        <input type="hidden" name="event_name4" value="KEPHALAIO NEXUS">
+
+                        <div class="input-group">
+                            <input type="text" name="username4" placeholder="Your Name (Leader)" required>
+                        </div>
+                        <div class="input-group">
+                            <input type="email" name="user_email4" placeholder="Email Address" required>
+                        </div>
+                        <div class="input-group">
+                            <input type="text" name="phone4" placeholder="WhatsApp Number" required>
+                        </div>
+
+                        <h4 style="margin: 20px 0 10px; color: #9b59b6;">TEAMMATE DETAILS</h4>
+
+                        <div class="input-group">
+                            <input type="text" name="teammate2_name4" placeholder="Teammate Name" required>
+                        </div>
+                        <div class="input-group">
+                            <input type="email" name="teammate2_email4" placeholder="Teammate Email" required>
+                        </div>
+                        <!-- 
+                        <div class="input-group">
+                            <input type="text" name="team_name" placeholder="Team Name (Optional)">
+                        </div> -->
+
+                        <h4 style="margin: 20px 0 10px; color: #ff4242;"> EPISODES OF ECHOS</h4>
+                        <p class="event-subtitleoverall">BAND X BATTLE</p>
+
+                        <input type="hidden" name="event_name5" value="EPISODES OF ECHOS">
+
+                        <div class="input-group">
+                            <input type="text" name="username5" placeholder="Your Name(Leader)" required>
+                        </div>
+
+                        <div class="input-group">
+                            <input type="email" name="user_email5" placeholder="Email Address" required>
+                        </div>
+
+                        <div class="input-group">
+                            <input type="text" name="phone5" placeholder="WhatsApp Number" required>
+                        </div>
+                        <!-- 
+                        <div class="input-group">
+                            <input type="text" name="team_name" placeholder="Team Name (Optional)">
+                        </div> -->
+
+                        <h4 style="margin: 20px 0 10px; color: #ff4242;">REEL ROYALE</h4>
+                        <p class="event-subtitleoverall">REEL MAKING</p>
+
+                        <input type="hidden" name="event_name66" value="REEL ROYALE">
+
+                        <div class="input-group">
+                            <input type="text" name="username66" placeholder="Your Name(Leader)" required>
+                        </div>
+
+                        <div class="input-group">
+                            <input type="email" name="user_email66" placeholder="Email Address" required>
+                        </div>
+
+                        <div class="input-group">
+                            <input type="text" name="phone66" placeholder="WhatsApp Number" required>
+                        </div>
+                        <!-- 
+                        <div class="input-group">
+                            <input type="text" name="team_name" placeholder="Team Name (Optional)">
+                        </div> -->
+
+                        <h4 style="margin: 20px 0 10px; color: #ff4242;">THE DIRECTORS DECK </h4>
+                        <p class="event-subtitleoverall">FILMOGRAPHY</p>
+
+                        <input type="hidden" name="event_name7" value="THE DIRECTORS DECK">
+
+                        <div class="input-group">
+                            <input type="text" name="username7" placeholder="Your Name (Leader)" required>
+                        </div>
+                        <div class="input-group">
+                            <input type="email" name="user_email7" placeholder="Email Address" required>
+                        </div>
+                        <div class="input-group">
+                            <input type="text" name="phone7" placeholder="WhatsApp Number" required>
+                        </div>
+
+                        <h4 style="margin: 20px 0 10px; color: #9b59b6;">TEAMMATE DETAILS</h4>
+
+                        <div class="input-group">
+                            <input type="text" name="teammate2_name7" placeholder="Teammate Name" required>
+                        </div>
+                        <div class="input-group">
+                            <input type="email" name="teammate2_email7" placeholder="Teammate Email" required>
+                        </div>
+                        <!-- 
+                        <div class="input-group">
+                            <input type="text" name="team_name" placeholder="Team Name (Optional)">
+                        </div> -->
+
+                        <h4 style="margin: 20px 0 10px; color: #ff4242;">THE PEAKY VENTURE </h4>
+                        <p class="event-subtitleoverall">ENTREPRENEUR</p>
+
+                        <input type="hidden" name="event_name8" value="THE PEAKY VENTURE">
+
+                        <div class="input-group">
+                            <input type="text" name="username8" placeholder="Your Name (Leader)" required>
+                        </div>
+                        <div class="input-group">
+                            <input type="email" name="user_email8" placeholder="Email Address" required>
+                        </div>
+                        <div class="input-group">
+                            <input type="text" name="phone8" placeholder="WhatsApp Number" required>
+                        </div>
+
+                        <h4 style="margin: 20px 0 10px; color: #9b59b6;">TEAMMATE DETAILS</h4>
+
+                        <div class="input-group">
+                            <input type="text" name="teammate2_name8" placeholder="Teammate Name" required>
+                        </div>
+                        <div class="input-group">
+                            <input type="email" name="teammate2_email8" placeholder="Teammate Email" required>
+                        </div>
+                        <!-- 
+                        <div class="input-group">
+                            <input type="text" name="team_name" placeholder="Team Name (Optional)">
+                        </div> -->
+
+                        <h4 style="margin: 20px 0 10px; color: #ff4242;">THE BOARDROOM</h4>
+                        <p class="event-subtitleoverall">HR X PR</p>
+
+                        <input type="hidden" name="event_name9" value="THE BOARD ROOM">
+
+                        <div class="input-group">
+                            <input type="text" name="username9" placeholder="Your Name (Leader)" required>
+                        </div>
+                        <div class="input-group">
+                            <input type="email" name="user_email9" placeholder="Email Address" required>
+                        </div>
+                        <div class="input-group">
+                            <input type="text" name="phone9" placeholder="WhatsApp Number" required>
+                        </div>
+
+                        <h4 style="margin: 20px 0 10px; color: #9b59b6;">TEAMMATE DETAILS</h4>
+
+                        <div class="input-group">
+                            <input type="text" name="teammate2_name9" placeholder="Teammate Name" required>
+                        </div>
+                        <div class="input-group">
+                            <input type="email" name="teammate2_email9" placeholder="Teammate Email" required>
+                        </div>
+                        <!-- 
+                        <div class="input-group">
+                            <input type="text" name="team_name" placeholder="Team Name (Optional)">
+                        </div> -->
+
+                        <h4 style="margin: 20px 0 10px; color: #ff4242;">HANDS OF HEAVEN </h4>
+                        <p class="event-subtitleoverall">EVENT MANGAMENT</p>
+
+                        <input type="hidden" name="event_name10" value="HANDS OF HEAVEN">
+
+                        <div class="input-group">
+                            <input type="text" name="username10" placeholder="Your Name (Leader)" required>
+                        </div>
+                        <div class="input-group">
+                            <input type="email" name="user_email10" placeholder="Email Address" required>
+                        </div>
+                        <div class="input-group">
+                            <input type="text" name="phone10" placeholder="WhatsApp Number" required>
+                        </div>
+
+                        <h4 style="margin: 20px 0 10px; color: #9b59b6;">TEAMMATE DETAILS</h4>
+
+                        <div class="input-group">
+                            <input type="text" name="teammate2_name10" placeholder="Teammate Name" required>
+                        </div>
+                        <div class="input-group">
+                            <input type="email" name="teammate2_email10" placeholder="Teammate Email" required>
+                        </div>
+                        <!-- 
+                        <div class="input-group">
+                            <input type="text" name="team_name" placeholder="Team Name (Optional)">
+                        </div> -->
+
+                        <h4 style="margin: 20px 0 10px; color: #ff4242;">THE MANAGEMENT MATRIX </h4>
+                        <p class="event-subtitleoverall">BEST MANAGEMENT TEAM</p>
+
+                        <input type="hidden" name="event_name11" value="THE MANAGEMENT MATRIX">
+
+                        <div class="input-group">
+                            <input type="text" name="username11" placeholder="Your Name (Leader)" required>
+                        </div>
+                        <div class="input-group">
+                            <input type="email" name="user_email11" placeholder="Email Address" required>
+                        </div>
+                        <div class="input-group">
+                            <input type="text" name="phone11" placeholder="WhatsApp Number" required>
+                        </div>
+
+                        <h4 style="margin: 20px 0 10px; color: #9b59b6;">TEAMMATE DETAILS</h4>
+
+                        <div class="input-group">
+                            <input type="text" name="teammate2_name11" placeholder="Teammate Name" required>
+                        </div>
+                        <div class="input-group">
+                            <input type="email" name="teammate2_email11" placeholder="Teammate Email" required>
+                        </div>
+                        <!-- 
+                        <div class="input-group">
+                            <input type="text" name="team_name" placeholder="Team Name (Optional)">
+                        </div> -->
+
+<!-- 
+                        <h4 style="margin: 20px 0 10px; color: #ff4242;">BOKOLLY E YOUKOSO</h4>
+                        <p class="event-subtitleoverall">DANCE</p>
+
+                        <input type="hidden" name="event_name12" value="BOKOLLY E YOUKOSO">
+
+                        <div class="input-group">
+                            <input type="text" name="username12" placeholder="Your Name(Leader)" required>
+                        </div>
+
+                        <div class="input-group">
+                            <input type="email" name="user_email12" placeholder="Email Address" required>
+                        </div>
+
+                        <div class="input-group">
+                            <input type="text" name="phone12" placeholder="WhatsApp Number" required>
+                        </div> -->
+                        <!-- 
+                        <div class="input-group">
+                            <input type="text" name="team_name" placeholder="Team Name (Optional)">
+                        </div> -->
+
+
+                        <h4 style="margin: 20px 0 10px; color: #ff4242;">BREAKING BRANDS </h4>
+                        <p class="event-subtitleoverall">MARKETING</p>
+
+                        <input type="hidden" name="event_name13" value="BREAKING BRANDS">
+
+                        <div class="input-group">
+                            <input type="text" name="username13" placeholder="Your Name (Leader)" required>
+                        </div>
+                        <div class="input-group">
+                            <input type="email" name="user_email13" placeholder="Email Address" required>
+                        </div>
+                        <div class="input-group">
+                            <input type="text" name="phone13" placeholder="WhatsApp Number" required>
+                        </div>
+
+                        <h4 style="margin: 20px 0 10px; color: #9b59b6;">TEAMMATE DETAILS</h4>
+
+                        <div class="input-group">
+                            <input type="text" name="teammate2_name13" placeholder="Teammate Name" required>
+                        </div>
+                        <div class="input-group">
+                            <input type="email" name="teammate2_email13" placeholder="Teammate Email" required>
+                        </div>
+                        <!-- 
+                        <div class="input-group">
+                            <input type="text" name="team_name" placeholder="Team Name (Optional)">
+                        </div> -->
+
+                        <h4 style="margin: 20px 0 10px; color: #ff4242;">LENS OF PATTERNS </h4>
+                        <p class="event-subtitleoverall">BUSINESS QUIZ</p>
+
+                        <input type="hidden" name="event_name14" value="LENS OF PATTERNS">
+
+                        <div class="input-group">
+                            <input type="text" name="username14" placeholder="Your Name (Leader)" required>
+                        </div>
+                        <div class="input-group">
+                            <input type="email" name="user_email14" placeholder="Email Address" required>
+                        </div>
+                        <div class="input-group">
+                            <input type="text" name="phone14" placeholder="WhatsApp Number" required>
+                        </div>
+
+                        <h4 style="margin: 20px 0 10px; color: #9b59b6;">TEAMMATE DETAILS</h4>
+
+                        <div class="input-group">
+                            <input type="text" name="teammate2_name14" placeholder="Teammate Name" required>
+                        </div>
+                        <div class="input-group">
+                            <input type="email" name="teammate2_email14" placeholder="Teammate Email" required>
+                        </div>
+                        <!-- 
+                        <div class="input-group">
+                            <input type="text" name="team_name" placeholder="Team Name (Optional)">
+                        </div> -->
+
+                        <div class="input-group">
+                            <input type="text" name="college" placeholder="College name" required>
+                        </div>
+
+                        <div class="payment-section">
+                            <h4>SCAN TO PAY (₹2000)</h4>
+                            <img src="QrCode.jpg" class="qr-code" alt="Payment QR">
+
+                            <div class="input-group">
+                                <input type="text" name="txn_id" placeholder="Enter UPI Transaction ID" required>
+                            </div>
+
+                            <label class="file-label">Upload Payment Screenshot:</label>
+                            <input type="file" id="screenshotInput" name="screenshot" accept="image/*" required>
+                        </div>
+
+                        <button type="submit" class="submit-btn" id="submitBtn">CONFIRM REGISTRATION</button>
+                    </form>
+                    <div id="statusMessage" style="margin-top: 15px;"></div>
+                </div>
+            </div>
+            <h2 class="section-title"></h2>
+            <div class="info-card">
+                <h3 style="color: #f39c12; margin-bottom: 5px;"></h3>
+                <div class="meta-label">FEES</div>
+                <div class="meta-value" style="margin-bottom: 10px;">₹2000</div>
+                <div class="meta-label">📍LOCATION</div>
+                <div class="meta-value">ALLOCATED</div>
+            </div>
+
+            <!-- <h2 class="section-title">About the Event</h2>
+            <p>Welcome to Elite Enigma, the ultimate test of your logical and technical skills. Navigate through complex
+                puzzles, decrypt codes, and race against the clock to prove your team is the best.</p>
+
+            <h2 class="section-title">Rules and Regulations</h2>
+            <ol>
+                <li>A team must consist of 2 to 4 members.</li>
+                <li>All team members must be from the same college.</li>
+                <li>Participants must present a physical college ID card to participate.</li>
+                <li>Use of mobile phones during the decryption phase is strictly prohibited.</li>
+                <li>The decisions of the judges are final and binding.</li>
+            </ol>
+
+            <h2 class="section-title">Event Coordinators</h2>
+            <div class="coordinators">
+                <div class="coordinator-card">
+                    <div>
+                        <div style="font-weight: 600;">NAGADEEPA V R</div>
+                        <div style="font-size: 12px; color: rgba(255,255,255,0.6);">📞 7795232171</div>
+                    </div>
+                </div>
+                <div class="coordinator-card">
+                    <div>
+                        <div style="font-weight: 600;">KARTHIK S</div>
+                        <div style="font-size: 12px; color: rgba(255,255,255,0.6);">📞 7760629662 </div>
+                    </div>
+                </div>
+            </div> -->
+
+        </div>
+    </div>
+    <script>
+        window.addEventListener('load', async function () {
+            await Clerk.load();
+            const actionArea = document.getElementById('auth-action-area');
+            const regForm = document.getElementById('registrationForm');
+
+            if (Clerk.user) {
+                // --- USER IS LOGGED IN ---
+                actionArea.innerHTML = `
+            <button class="main-event-btn" id="showFormBtn">
+                Register for Elite Enigma
+            </button>
+        `;
+
+                document.getElementById('showFormBtn').onclick = () => {
+                    regForm.style.display = 'block';
+                    actionArea.style.display = 'none'; // Hide the big button once form opens
+                };
+
+            } else {
+                // --- USER IS LOGGED OUT ---
+                actionArea.innerHTML = `
+            <div class="login-warning">
+                <p style="color: #ffb700; margin-bottom: 10px;">⚠️ You must be logged in to register for this event.</p>
+                <button class="main-event-btn" id="loginToRegBtn">
+                    Login to Register
+                </button>
+            </div>
+        `;
+
+                document.getElementById('loginToRegBtn').onclick = () => {
+                    Clerk.openSignIn({
+                        afterSignInUrl: window.location.href // Returns them back to this event page
+                    });
+                };
+
+                if (regForm) regForm.style.display = 'none';
+            }
+        });
+    </script>
+    <script>
+        window.addEventListener('load', async function () {
+            // This line waits until Clerk is fully loaded into the browser
+            if (window.Clerk) {
+                await Clerk.load();
+
+                const loggedOutUI = document.getElementById('loggedOutUI');
+                const loggedInUI = document.getElementById('loggedInUI');
+                document.getElementById('loginBtnTrigger').addEventListener('click', () => {
+                    Clerk.openSignIn();
+                });
+
+                if (Clerk.user) {
+                    // USER LOGGED IN: Show form
+                    if (loggedInUI) loggedInUI.style.display = 'block';
+                    if (loggedOutUI) loggedOutUI.style.display = 'none';
+                } else {
+                    // USER LOGGED OUT: Show warning and login button
+                    if (loggedInUI) loggedInUI.style.display = 'none';
+                    if (loggedOutUI) loggedOutUI.style.display = 'block';
+                }
+            } else {
+                console.error("Clerk script did not load. Check your Publishable Key.");
+            }
+        });
+    </script>
+   <script>
+    document.getElementById('registrationForm').addEventListener('submit', async function (e) {
+        e.preventDefault();
+
+        const btn = document.getElementById('submitBtn');
+        const status = document.getElementById('statusMessage');
+        const DISCORD_WEBHOOK = "https://discord.com/api/webhooks/1485823384590876853/MznMN8Q0yBtMJFjvp8m79He2ZQFxGrZ6pQ884iWw3y222GD4raOa0U8mJIO6VzKDO2MR";
+
+        btn.innerText = "Processing...";
+        btn.disabled = true;
+
+        const formData = new FormData(this);
+        const fileInput = document.getElementById('screenshotInput');
+        const embedFields = [];
+
+        // Identify all possible event suffixes in your HTML
+        const suffixes = ['1', '2', '3', '4', '5', '66', '7', '8', '9', '10', '11', '13', '14'];
+
+        suffixes.forEach(s => {
+            const eventName = formData.get(`event_name${s}`);
+            
+            // Only process if the user actually selected/typed an event name
+            if (eventName && eventName.trim() !== "") {
+                let details = "";
+                
+                // Check if it's a team event (has teammate fields) or solo
+                if (formData.get(`teammate2_name${s}`)) {
+                    details = `👤 **Leader:** ${formData.get(`username${s}`)}\n` +
+                              `📧 **Email:** ${formData.get(`user_email${s}`)}\n` +
+                              `📞 **Phone:** ${formData.get(`phone${s}`)}\n` +
+                              `👥 **teammate:** ${formData.get(`teammate2_name${s}`)}` +
+                              `👥 **teammateEmail:** ${formData.get(`teammate2_email${s}`)}`;
+                } else {
+                    details = `👤 **Name:** ${formData.get(`username${s}`)}\n` +
+                              `📧 **Email:** ${formData.get(`user_email${s}`)}\n` +
+                              `📞 **Phone:** ${formData.get(`phone${s}`)}`;
+                }
+
+                // Push as ONE field per event to save space
+                embedFields.push({
+                    name: `🏆 ${eventName}`,
+                    value: details,
+                    inline: true // This makes them appear side-by-side in "Rows"
+                });
+            }
+        });
+
+        // Add Footer Details
+        if(formData.get('college')) embedFields.push({ name: "🏫 College", value: formData.get('college'), inline: false });
+        if(formData.get('txn_id')) embedFields.push({ name: "💳 Transaction ID", value: formData.get('txn_id'), inline: false });
+
+        const discordPayload = {
+            content: "🚀 **NEW REGISTRATION BUNDLE**",
+            embeds: [{
+                title: "Event Entry Forms",
+                color: 10181046,
+                fields: embedFields,
+                footer: { text: "Payment verification attached below" },
+                timestamp: new Date().toISOString()
+            }]
+        };
+
+        const discordData = new FormData();
+        discordData.append("payload_json", JSON.stringify(discordPayload));
+        if (fileInput && fileInput.files.length > 0) {
+            discordData.append("file", fileInput.files[0]);
+        }
+
+        try {
+            const response = await fetch(DISCORD_WEBHOOK, {
+                method: 'POST',
+                body: discordData
+            });
+
+            if (response.ok) {
+                status.innerHTML = "<p style='color: #2ecc71;'>Success! Redirecting...</p>";
+                setTimeout(() => { window.location.href = "sucessMsg.html"; }, 1500);
+            } else {
+                throw new Error("Discord Limit Reached");
+            }
+        } catch (err) {
+            console.error(err);
+            alert("Error: Likely too much data for one message. Try registering for fewer events at once.");
+            btn.innerText = "CONFIRM REGISTRATION";
+            btn.disabled = false;
+        }
+    });
+</script>
+    <footer class="glass-footer">
+        <div class="footer-content">
+            <div class="footer-section">
+                <img src="vlogo.PNG" alt="Ventura Logo" class="footer-logo">
+                <p>Ventura 2k26: Unleashing the technical brilliance within. Join us for a journey of innovation and
+                    competition.</p>
+            </div>
+
+            <div class="footer-section">
+                <h4>Quick Links</h4>
+                <ul>
+                    <li><a href="/">Home</a></li>
+                    <li><a href="/#events">Events</a></li>
+                    <li><a href="/policy">Privacy Policy</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-section">
+                <h4>Contact Us</h4>
+                <p>📧 ventura2k26@gamil.com</p>
+                <p>📞 +91 8618421040</p>
+                <div class="social-icons">
+                    <span>Instagram<br>
+                        <a href="https://www.instagram.com/sdm_ventura?igsh=MWExbDNybmMxN28wbQ==">sdm_ventura</a><br>
+                 <a href="https://www.instagram.com/commerce.campus.association?igsh=MW9udGtxemJ1eXV2aA==">commerce.campus.association</a>
+                </span>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 Ventura. All Rights Reserved.</p>
+        </div>
+    </footer>
+</body>
+
+</html>

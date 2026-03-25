@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FACE OF DERRY - Registration</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styleEvent.css">
+    <script async crossorigin="anonymous"
+        data-clerk-publishable-key="pk_test_bXVzaWNhbC1jYW1lbC01NC5jbGVyay5hY2NvdW50cy5kZXYk"
+        src="https://allowed-marlin-45.clerk.accounts.dev/npm/@clerk/clerk-js@latest/dist/clerk.browser.js"
+        type="text/javascript"></script>
+</head>
+
+<body>
+
+    <div class="overlay">
+        <div class="container">
+
+            <div class="top-bar">
+                <a href="/" class="back-btn">←</a>
+            </div>
+
+
+            <div class="event-poster">
+                <img src="faceofderry.jpg" alt="FACES OF DERRY POSTER"
+                    style="width: 100%; height: 100%; object-fit: cover; border-radius: 15px;">
+            </div>
+
+            <div class="category">Non-Core</div>
+            <h1 class="event-title">FACES OF DERRY</h1>
+            <p class="event-subtitle">FACE PAINTING</p>
+
+            <div class="meta-grid">
+                <!-- <div>
+                <div class="meta-label">Tier</div>
+                <div class="meta-value">GOLD</div>
+            </div>
+            <div>
+                <div class="meta-label">Prize Pool</div>
+                <div class="meta-value">₹15,000</div>
+            </div> -->
+                <div>
+                    <div class="meta-label">Team Size</div>
+                    <div class="meta-value">2 PER A TEAM</div>
+                </div>
+            </div>
+            <div class="registration-form">
+    <h3>Register for this event</h3>
+    <div id="loggedOutUI">
+        <p style="color: #ffb700; margin-bottom: 15px;">⚠️ You must be logged in to register your team.</p>
+        <button type="button" class="submit-btn" id="loginBtnTrigger">LOGIN TO REGISTER</button>
+    </div>
+
+    <div id="loggedInUI" style="display: none;">
+        <form id="registrationForm">
+            <input type="hidden" name="event_name" value="Face of Derry">
+
+            <div class="input-group">
+                <input type="text" name="username" placeholder="Your Name (Leader)" required>
+            </div>
+            <div class="input-group">
+                <input type="email" name="user_email" placeholder="Email Address" required>
+            </div>
+            <div class="input-group">
+                <input type="text" name="phone" placeholder="WhatsApp Number" required>
+            </div>
+            
+            <h4 style="margin: 20px 0 10px; color: #9b59b6;">TEAMMATE DETAILS</h4>
+
+            <div class="input-group">
+                <input type="text" name="teammate2_name" placeholder="Teammate Name" required>
+            </div>
+            <div class="input-group">
+                <input type="email" name="teammate2_email" placeholder="Teammate Email" required>
+            </div>
+            <div class="input-group">
+                <input type="text" name="college" placeholder="College Name" required>
+            </div>
+
+            <div class="payment-section">
+                <h4>SCAN TO PAY (₹200)</h4>
+                <img src="QrCode.jpg" class="qr-code" alt="Payment QR">
+
+                <div class="input-group">
+                    <input type="text" name="txn_id" placeholder="Enter UPI Transaction ID" required>
+                </div>
+
+                <label class="file-label">Upload Payment Screenshot:</label>
+                <input type="file" id="screenshotInput" name="screenshot" accept="image/*" required>
+            </div>
+
+            <button type="submit" class="submit-btn" id="submitBtn">CONFIRM REGISTRATION</button>
+        </form>
+        <div id="statusMessage" style="margin-top: 15px;"></div>
+    </div>
+</div>
+    <h2 class="section-title"></h2>
+    <div class="info-card">
+        <h3 style="color: #f39c12; margin-bottom: 5px;"></h3>
+        <div class="meta-label">FEES</div>
+        <div class="meta-value" style="margin-bottom: 10px;">₹200</div>
+        <div class="meta-label">📍LOCATION</div>
+        <div class="meta-value">OLD CANTEEN</div>
+    </div>
+
+    <h2 class="section-title">About the Event</h2>
+    <p>Dive into the world of web series and express it through face painting. Transform faces into powerful characters and stories. Turn a face into a living canvas inspired by iconic web series. Bring characters, mystery, and creativity to life through face art.</p>
+
+    <h2 class="section-title">Rules and Regulations</h2>
+    <ol>
+        <li>Team Participation: Each team must consist of 2 members one person as the artist and the other as the model. </li>
+        <li>Theme: The face painting design must be inspired by any web series character, theme, or concept. </li>
+        <li>Time Limit: Participants will get 60 minutes to complete their design.</li>
+        <li>Materials: Teams must bring their own face paints, brushes, and other materials. Only skin-safe paints are allowed.</li>
+        <li>Area of Painting: Painting should be done only on the face (no painting on arms or other body parts).</li>
+        <li>Cleanliness: Participants must keep their workspace clean during and after the competition.</li>
+        <li>Originality: Designs must be original and created during the competition time only.</li>
+        <li>Judge's Decision: The judges' decision will be final.</li>
+    </ol>
+
+    <h2 class="section-title">Event Coordinators</h2>
+    <div class="coordinators">
+        <div class="coordinator-card">
+            <div>
+                <div style="font-weight: 600;">ISHREE K </div>
+                <div style="font-size: 12px; color: rgba(255,255,255,0.6);">📞 9019966824</div>
+            </div>
+            <!-- </div>
+                <div class="coordinator-card">
+                    <div>
+                        <div style="font-weight: 600;">DEEPTHI ACHARIYA P</div>
+                        <div style="font-size: 12px; color: rgba(255,255,255,0.6);">📞 8124272423 </div>
+                    </div>
+                </div> -->
+        </div>
+
+    </div>
+    </div>
+    <script>
+        window.addEventListener('load', async function () {
+            await Clerk.load();
+            const actionArea = document.getElementById('auth-action-area');
+            const regForm = document.getElementById('registrationForm');
+
+            if (Clerk.user) {
+                // --- USER IS LOGGED IN ---
+                actionArea.innerHTML = `
+            <button class="main-event-btn" id="showFormBtn">
+                Register for Elite Enigma
+            </button>
+        `;
+
+                document.getElementById('showFormBtn').onclick = () => {
+                    regForm.style.display = 'block';
+                    actionArea.style.display = 'none'; // Hide the big button once form opens
+                };
+
+            } else {
+                // --- USER IS LOGGED OUT ---
+                actionArea.innerHTML = `
+            <div class="login-warning">
+                <p style="color: #ffb700; margin-bottom: 10px;">⚠️ You must be logged in to register for this event.</p>
+                <button class="main-event-btn" id="loginToRegBtn">
+                    Login to Register
+                </button>
+            </div>
+        `;
+
+                document.getElementById('loginToRegBtn').onclick = () => {
+                    Clerk.openSignIn({
+                        afterSignInUrl: window.location.href // Returns them back to this event page
+                    });
+                };
+
+                if (regForm) regForm.style.display = 'none';
+            }
+        });
+    </script>
+    <script>
+        window.addEventListener('load', async function () {
+            // This line waits until Clerk is fully loaded into the browser
+            if (window.Clerk) {
+                await Clerk.load();
+
+                const loggedOutUI = document.getElementById('loggedOutUI');
+                const loggedInUI = document.getElementById('loggedInUI');
+                document.getElementById('loginBtnTrigger').addEventListener('click', () => {
+                    Clerk.openSignIn();
+                });
+
+                if (Clerk.user) {
+                    // USER LOGGED IN: Show form
+                    if (loggedInUI) loggedInUI.style.display = 'block';
+                    if (loggedOutUI) loggedOutUI.style.display = 'none';
+                } else {
+                    // USER LOGGED OUT: Show warning and login button
+                    if (loggedInUI) loggedInUI.style.display = 'none';
+                    if (loggedOutUI) loggedOutUI.style.display = 'block';
+                }
+            } else {
+                console.error("Clerk script did not load. Check your Publishable Key.");
+            }
+        });
+    </script>
+    <script>
+        document.getElementById('registrationForm').addEventListener('submit', async function (e) {
+            e.preventDefault();
+
+            const btn = document.getElementById('submitBtn');
+            const status = document.getElementById('statusMessage');
+
+            // 1. YOUR DISCORD LINK
+            const DISCORD_WEBHOOK = "https://discord.com/api/webhooks/1485646075556659250/UZJcn3VGhC3yZF2luaVcGtwE6ajQhrD0JKhT1HhZAvlXvBoiqB86aHE2mymiF0_Si1JZ";
+
+            btn.innerText = "Processing...";
+            btn.disabled = true;
+
+            const formData = new FormData(this);
+            const fileInput = document.getElementById('screenshotInput');
+
+            // 2. Prepare the Discord Package (Column View)
+            const discordData = new FormData();
+            const discordPayload = {
+                content: "🚀 **NEW EVENT REGISTRATION RECEIVED**",
+                embeds: [{
+                    title: "Registration Details: " + formData.get('event_name'),
+                    color: 10181046, // Purple
+                    fields: [
+                        { name: "🏆 Event", value: formData.get('event_name'), inline: false },
+                        { name: "👤 Leader Name", value: formData.get('username'), inline: false },
+                        { name: "📧 Leader Email", value: formData.get('user_email'), inline: false },
+                        { name: "📞 WhatsApp", value: formData.get('phone'), inline: false },
+                        { name: "👥 Teammate Name", value: formData.get('teammate2_name'), inline: false },
+                        { name: "📧 Teammate Email", value: formData.get('teammate2_email'), inline: false },
+                        { name: "🏫 College", value: formData.get('college'), inline: false },
+                        // { name: "🏆 Team Name", value: formData.get('team_name') || "None", inline: false },
+                        { name: "💳 Transaction ID", value: formData.get('txn_id'), inline: false }
+                    ],
+                    footer: { text: "Verify the attached payment screenshot below." },
+                    timestamp: new Date()
+                }]
+            };
+
+            discordData.append("payload_json", JSON.stringify(discordPayload));
+
+            if (fileInput.files.length > 0) {
+                discordData.append("file", fileInput.files[0]);
+            }
+
+            try {
+                const response = await fetch(DISCORD_WEBHOOK, {
+                    method: 'POST',
+                    body: discordData
+                });
+
+                if (response.ok) {
+                    status.innerHTML = "<p style='color: #2ecc71; text-align: center;'>Success! Redirecting...</p>";
+
+                    // 3. Redirect to your success page
+                    setTimeout(() => {
+                        window.location.href = "sucessMsg.html";
+                    }, 1500);
+                } else {
+                    throw new Error("Discord rejected the data");
+                }
+
+            } catch (err) {
+                console.error(err);
+                alert("Registration failed. Please check your internet and try again.");
+                btn.innerText = "CONFIRM REGISTRATION";
+                btn.disabled = false;
+            }
+        });
+    </script>
+    <footer class="glass-footer">
+        <div class="footer-content">
+            <div class="footer-section">
+                <img src="vlogo.PNG" alt="Ventura Logo" class="footer-logo">
+                <p>Ventura 2k26: Unleashing the technical brilliance within. Join us for a journey of innovation
+                    and
+                    competition.</p>
+            </div>
+
+            <div class="footer-section">
+                <h4>Quick Links</h4>
+                <ul>
+                    <li><a href="/">Home</a></li>
+                    <li><a href="/#events">Events</a></li>
+                    <li><a href="/policy">Privacy Policy</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-section">
+                <h4>Contact Us</h4>
+                <p>📧 ventura2k26@gamil.com</p>
+                <p>📞 +91 8618421040</p>
+                <div class="social-icons">
+                    <span>Instagram<br>
+                        <a href="https://www.instagram.com/sdm_ventura?igsh=MWExbDNybmMxN28wbQ==">sdm_ventura</a><br>
+                 <a href="https://www.instagram.com/commerce.campus.association?igsh=MW9udGtxemJ1eXV2aA==">commerce.campus.association</a>
+                </span>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 Ventura. All Rights Reserved.</p>
+        </div>
+    </footer>
+</body>
+
+</html>

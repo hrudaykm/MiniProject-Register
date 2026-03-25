@@ -1,0 +1,389 @@
+ * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        body {
+            /* Using your background image */
+            background: url('background.jpg') no-repeat center center fixed;
+            background-size: cover;
+            color: white;
+            background-color: #0a0a0a; /* Fallback color */
+        }
+
+        /* Dark overlay to make text readable */
+        .overlay {
+            background: rgba(0, 0, 0, 0.75);
+            min-height: 100vh;
+            padding-bottom: 50px;
+        }
+
+        /* Main Container matching mobile view */
+        .container {
+            max-width: 600px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        /* Top Bar with Back Button */
+        .top-bar {
+            display: flex;
+            align-items: center;
+            padding: 20px 0;
+        }
+        
+        .back-btn {
+            color: white;
+            text-decoration: none;
+            font-size: 24px;
+            margin-right: 20px;
+        }
+
+        /* Event Poster Placeholder */
+        .event-poster {
+            width:100%;
+            height: full;
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 15px;
+            border: 1px solid rgba(255,255,255,0.05);
+            margin-bottom: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            /* Update this to your actual poster image */
+            background-image: url('eliteEngama1.jpg');
+            background-size: cover;
+        }
+
+        .category { color: #f39c12; font-size: 14px; font-weight: 600; text-transform: uppercase; letter-spacing: 1px; }
+        .event-title { font-size: 36px; font-weight: 700; margin: 5px 0 15px 0; letter-spacing: 2px; text-transform: uppercase; }
+
+        /* Meta Info Grid (Tier, Prize, Team size) */
+        .meta-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 15px;
+            margin-bottom: 30px;
+            font-size: 14px;
+        }
+        .meta-label { color: rgba(255, 255, 255, 0.5); font-size: 12px; }
+        .meta-value { font-weight: 600; font-size: 16px; }
+
+        /* --- THE REGISTRATION FORM (Replaces Login Button) --- */
+        .registration-form {
+            background: rgba(255, 255, 255, 0.03);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            padding: 25px;
+            border-radius: 15px;
+            margin-bottom: 40px;
+        }
+
+        .registration-form h3 {
+            margin-bottom: 15px;
+            color: #9b59b6; /* Purple accent */
+        }
+
+        .input-group { margin-bottom: 15px; }
+        
+        .input-group input {
+            width: 100%;
+            padding: 12px 15px;
+            background: rgba(0, 0, 0, 0.5);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            border-radius: 8px;
+            color: white;
+            outline: none;
+            transition: 0.3s;
+        }
+
+        .input-group input:focus { border-color: #9b59b6; }
+
+        .submit-btn {
+            width: 100%;
+            padding: 15px;
+            background: linear-gradient(90deg, #61045f, #200122); /* Purple Gradient matching video */
+            border: none;
+            border-radius: 8px;
+            color: white;
+            font-weight: 700;
+            font-size: 16px;
+            letter-spacing: 1px;
+            cursor: pointer;
+            text-transform: uppercase;
+            box-shadow: 0 4px 15px rgba(155, 89, 182, 0.4);
+        }
+
+        /* Content Sections (Rounds, Description, Rules) */
+        .section-title {
+            font-size: 22px;
+            font-weight: 600;
+            margin-bottom: 15px;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+            padding-bottom: 10px;
+        }
+
+        .info-card {
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 10px;
+            padding: 20px;
+            margin-bottom: 30px;
+        }
+
+        p, li { color: rgba(255, 255, 255, 0.8); line-height: 1.6; font-size: 14px; margin-bottom: 10px; }
+        ul, ol { padding-left: 20px; margin-bottom: 30px; }
+
+        /* Coordinators */
+        .coordinators {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+        .coordinator-card {
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            padding: 15px;
+            border-radius: 10px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .glass-footer {
+    background: rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(15px);
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    padding: 50px 20px 20px 20px;
+    margin-top: 100px; /* Space between content and footer */
+}
+
+.footer-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 40px;
+}
+
+.footer-section h4 {
+    color: #9b59b6; /* Purple accent to match your theme */
+    margin-bottom: 20px;
+    font-size: 18px;
+    text-transform: uppercase;
+}
+
+.footer-logo {
+    height: 150px;
+    width: 200px;
+    margin-bottom: 15px;
+}
+
+.footer-section p, .footer-section li {
+    color: rgba(255, 255, 255, 0.7);
+    font-size: 14px;
+    list-style: none;
+    line-height: 1.8;
+}
+
+.footer-section a {
+    color: rgba(255, 255, 255, 0.7);
+    text-decoration: none;
+    transition: 0.3s;
+}
+
+.footer-section a:hover {
+    color: #9b59b6;
+}
+
+.footer-bottom {
+    text-align: center;
+    margin-top: 40px;
+    padding-top: 20px;
+    border-top: 1px solid rgba(255, 255, 255, 0.05);
+    font-size: 12px;
+    color: rgba(255, 255, 255, 0.4);
+}
+body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+.glass-footer {
+    margin-top: auto;
+}
+/* MOBILE RESPONSIVE FIXES */
+@media (max-width: 768px) {
+    /* 1. Make the Hero section take up more space */
+    .hero {
+        padding: 40px 20px;
+        width: 100% !important;
+    }
+
+    /* 2. Make the "Events" title bigger for mobile */
+    h1 {
+        font-size: 40px !important;
+    }
+
+    /* 3. Stack the Search and Filters on top of each other */
+    .filters {
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    /* 4. Make Event Cards full width so they aren't tiny */
+    .event-card {
+        width: 95% !important;
+        margin: 10px auto;
+    }
+
+    /* 5. Fix the footer gaps you saw earlier */
+    .glass-footer {
+        width: 100vw;
+        padding: 40px 20px;
+    }
+    
+    .footer-content {
+        flex-direction: column;
+        text-align: center;
+        align-items: center;
+    }
+}
+@media (max-width: 768px) {
+    /* 1. Shrink the Nav Bar so it doesn't eat the top of the screen */
+    nav {
+        padding: 10px 15px !important;
+        height: auto !important;
+    }
+
+    /* 2. Fix the Hero section (The "Events" area) */
+    .hero {
+        padding-top: 20px !important; /* Reduces space at the top */
+        padding-bottom: 20px !important; 
+        margin-bottom: 10px !important;
+    }
+
+    /* 3. Make the Search Bar wider for mobile */
+    .search-container {
+        width: 90% !important; /* Uses more of the screen width */
+        margin: 10px auto !important;
+    }
+
+    /* 4. Fix the "Filters" (All Categories / All Days) */
+    .filters {
+        flex-direction: column; /* Stacks them instead of side-by-side */
+        gap: 10px;
+        width: 90%;
+        margin: 0 auto;
+    }
+
+    .filters select {
+        width: 100% !important; /* Makes dropdowns easy to tap */
+    }
+
+    /* 5. Bring the Event Card up higher */
+    .events-list {
+        margin-top: 10px !important;
+        padding: 0 10px !important;
+    }
+
+    .event-card {
+        width: 100% !important;
+        margin-bottom: 20px !important;
+    }
+}
+.main-event-btn {
+    background: rgba(155, 89, 182, 0.2); /* Faded purple background like your image */
+    border: 1px solid #9b59b6;
+    color: #9b59b6;
+    padding: 15px 30px;
+    border-radius: 12px;
+    font-size: 18px;
+    font-weight: bold;
+    cursor: pointer;
+    width: 100%;
+    transition: 0.3s;
+}
+
+.main-event-btn:hover {
+    background: #9b59b6;
+    color: white;
+    box-shadow: 0 0 20px rgba(155, 89, 182, 0.4);
+}
+
+.login-warning {
+    text-align: center;
+    padding: 20px;
+    background: rgba(0, 0, 0, 0.3);
+    border-radius: 15px;
+    border: 1px dashed rgba(255, 255, 255, 0.1);
+}
+.event-subtitle {
+    font-size: 17px;          /* Makes it smaller than the title */
+    color: #cccccc;          /* A lighter grey so it doesn't distract */
+    margin-top: -5px;        /* Pulls it closer to the title */
+    margin-bottom: 13px;     /* Space before the 'Team Size' section */
+    font-weight: 500;
+    text-transform: uppercase; /* Keeps it consistent with your 'CORE' style */
+    letter-spacing: 1px;
+}
+/* Styling the Registration Area */
+.reg-title {
+    color: #9b59b6;
+    text-align: center;
+    margin-bottom: 20px;
+    text-transform: uppercase;
+}
+
+.payment-section {
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid rgba(155, 89, 182, 0.3);
+    border-radius: 15px;
+    padding: 20px;
+    margin: 20px 0;
+    text-align: center;
+}
+
+.payment-section h4 {
+    color: #ffb700; /* Gold/Yellow for visibility */
+    font-size: 14px;
+    letter-spacing: 1px;
+}
+
+.qr-code {
+    width: 150px;
+    border: 4px solid #fff;
+    border-radius: 10px;
+    margin: 15px 0;
+}
+
+.file-label {
+    display: block;
+    color: #aaa;
+    font-size: 12px;
+    margin: 10px 0 5px 0;
+}
+
+/* Custom File Upload Button */
+input[type="file"] {
+    background: #1a1a1a;
+    border: 1px solid #333;
+    color: #9b59b6;
+    padding: 8px;
+    border-radius: 5px;
+    width: 100%;
+}
+
+.submit-btn:disabled {
+    background: #444;
+    cursor: not-allowed;
+}
+.event-subtitleoverall {
+    font-size: 12px;          /* Makes it smaller than the title */
+    color: #ff82d1;          /* A lighter grey so it doesn't distract */
+    margin-top: -5px;        /* Pulls it closer to the title */
+    margin-bottom: 13px;     /* Space before the 'Team Size' section */
+    font-weight: 500;
+    text-transform: uppercase; /* Keeps it consistent with your 'CORE' style */
+    letter-spacing: 1px;
+}
