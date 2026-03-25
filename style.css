@@ -567,45 +567,11 @@ body {
     letter-spacing: 1px;
 }
 /* Mobile Optimization - Screens smaller than 768px */
-@media (max-width: 768px) {
-    nav {
-        display: flex;
-        flex-direction: column; /* Stacks the logo and name vertically */
-        align-items: center;    /* Centers everything */
-        height: auto;           /* Allows the header to grow taller */
-        padding: 10px 0;
-    }
 
-    .nav-left {
-        display: flex;
-        flex-direction: column; /* Puts the SDM icon above the name */
-        align-items: center;
-        width: 100%;
-    }
-
-    .sdm-icon {
-        width: 45px;            /* Makes the icon smaller */
-        margin-bottom: 5px;
-    }
-
-    .college-full-name {
-        font-size: 11px;        /* Shrinks the font so it fits on one/two lines */
-        font-weight: 600;
-        text-align: center;
-        line-height: 1.2;
-        width: 90%;             /* Prevents text from hitting the screen edges */
-        display: block;
-    }
-
-    .center-logo {
-        width: 130px;           /* Resizes the Ventura logo */
-        margin-top: 10px;
-    }
-}
-@media (max-width: 768px) {
+/* @media (max-width: 768px) {
     nav {
         display: flex !important;
-        flex-direction: column !important; /* Stacks logos and name vertically */
+        flex-direction: column !important;
         height: auto !important;
         padding: 15px !important;
         gap: 10px;
@@ -634,7 +600,7 @@ body {
         width: 110px !important;
         margin: 0 auto;
     }
-}
+} */
 /* Mobile specific fixes to prevent overlapping */
 @media (max-width: 768px) {
     nav {
