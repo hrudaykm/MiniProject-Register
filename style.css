@@ -37,7 +37,7 @@ nav {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 0 40px;
+    padding: 10px 15px;
     position: fixed; /* Keep fixed at the top as per your code */
     top: 0;
     left: 0;
@@ -80,8 +80,9 @@ nav {
 
 .nav-right {
     display: flex;
-    align-items: center;
+    /* align-items: center; */
     gap: 10px;
+    justify-content: flex-end;
     /* Removed flex: 1 to prevent pushing the absolute logo */
 }
 /* Update nav-left to align image and text */
@@ -90,6 +91,22 @@ nav {
     align-items: center;
     gap: 12px; /* Space between sdm.png and the college name */
     flex: 1;
+}
+.nav-left img{
+    height:40px;
+    width:auto
+}
+.nav-left span{
+    font-size: 10px; /*Smaller font for mobile*/
+    line-height:1.2;
+}
+.nav-centre{
+    flex: 1;
+    display: flex;
+    justify-content: center;
+}
+.nav-centre img {
+    height: 50px;
 }
 
 /* Style for the new left-side image */
@@ -617,4 +634,56 @@ body {
         width: 110px !important;
         margin: 0 auto;
     }
+}
+/* Mobile specific fixes to prevent overlapping */
+@media (max-width: 768px) {
+    nav {
+        padding: 5px 10px !important;
+    }
+
+    .sdm-icon {
+        width: 35px !important; /* Smaller for mobile */
+    }
+
+    .college-full-name {
+        font-size: 9px !important; /* Small enough to fit beside the logo */
+        max-width: 120px;
+        line-height: 1.1;
+    }
+
+    .center-logo img {
+        width: 90px !important;
+    }
+}
+.input-container {
+  display: flex;
+  flex-wrap: wrap; /* Allows inputs to move to the next line */
+  gap: 15px;      /* Consistent spacing */
+  padding: 10px;
+}
+
+.input-container input {
+  flex: 1 1 100%; /* On mobile, take up full width */
+  min-width: 0;   /* Prevents the input from pushing past its container */
+  box-sizing: border-box; 
+}
+
+/* For Tablets/Desktop: Show 2 or 3 per row */
+@media (min-width: 600px) {
+  .input-container input {
+    flex: 1 1 calc(50% - 15px); 
+  }
+}
+body, html {
+  overflow-x: hidden; /* Stops horizontal 'shaking' */
+}
+
+.event-details-container {
+  max-width: 100vw;
+  overflow: hidden;
+}
+input {
+  -webkit-appearance: none;
+  border-radius: 4px; /* Set your own radius */
+  font-size: 16px;    /* Prevents iOS from auto-zooming when clicking the box */
 }
