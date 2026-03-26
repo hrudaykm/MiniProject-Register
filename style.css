@@ -602,17 +602,17 @@ body {
     }
 } */
 /* Mobile specific fixes to prevent overlapping */
-@media (max-width: 768px) {
+/* @media (max-width: 768px) {
     nav {
         padding: 5px 10px !important;
     }
 
     .sdm-icon {
-        width: 35px !important; /* Smaller for mobile */
+        width: 35px !important; 
     }
 
     .college-full-name {
-        font-size: 9px !important; /* Small enough to fit beside the logo */
+        font-size: 9px !important;
         max-width: 120px;
         line-height: 1.1;
     }
@@ -620,7 +620,7 @@ body {
     .center-logo img {
         width: 90px !important;
     }
-}
+} */
 .input-container {
   display: flex;
   flex-wrap: wrap; /* Allows inputs to move to the next line */
