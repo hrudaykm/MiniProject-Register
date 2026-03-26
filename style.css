@@ -31,140 +31,109 @@ body {
 
 }
 
+/* --- Global Nav Styles --- */
 nav {
     width: 100%;
     height: 80px;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 0px 14px;
-    position: fixed; /* Keep fixed at the top as per your code */
+    padding: 0 20px;
+    position: fixed;
     top: 0;
     left: 0;
     z-index: 9999;
-    background: rgba(0, 0, 0, 0.7);
+    background: rgba(0, 0, 0, 0.8);
     backdrop-filter: blur(15px);
     border-bottom: 1px solid rgba(255, 255, 255, 0.1);
     box-sizing: border-box;
 }
 
-/* Style for the College Name on the left */
-.college-full-name {
-    font-size: 12px;
-    font-weight: 600;
-    color: white;
-    letter-spacing: 1px;
-    max-width: 250px; /* Prevents text from hitting the middle logo */
-    line-height: 1.4;
-}
-
-/* Forces the logo to the exact middle of the screen */
-.center-logo {
-    position: absolute;
-    left: 50%;
-    top: 50%;
-    transform: translate(-50%, -50%); /* Keeps it exactly in the middle */
-    
-    /* Change this number to make it bigger */
-    height: 100px; 
-    width: auto;
-    
-    z-index: 10;
-    transition: transform 0.3s ease; /* Adds a smooth feel */
-}
-
-/* Optional: Hover effect to make it pop */
-.center-logo:hover {
-    transform: translate(-50%, -50%) scale(1.1);
-}
-
-.nav-right {
-    display: flex;
-    /* align-items: center; */
-    gap: 10px;
-    justify-content: flex-end;
-    /* Removed flex: 1 to prevent pushing the absolute logo */
-}
-/* Update nav-left to align image and text */
+/* Left Section: Logo + Name */
 .nav-left {
     display: flex;
-    align-items: left;
-    gap: 12px; /* Space between sdm.png and the college name */
-    flex: 1;
-}
-.nav-left img{
-    height:40px;
-    width:auto
-}
-.nav-left span{
-    font-size: 10px; /*Smaller font for mobile*/
-    line-height:1.2;
-}
-.nav-centre{
-    flex: 1;
-    display: flex;
-    justify-content: center;
-}
-.nav-centre img {
-    height: 50px;
+    align-items: center;
+    gap: 10px;
+    flex: 1; /* Takes up space on the left */
 }
 
-/* Style for the new left-side image */
 .sdm-icon {
-    height: 40px; /* Adjust size to fit neatly in the nav bar */
+    height: 50px;
     width: auto;
-    border-radius: 4px; /* Optional: adds slightly rounded corners */
 }
 
-/* Ensure the text doesn't wrap awkwardly */
 .college-full-name {
     font-size: 11px;
     font-weight: 700;
     color: white;
-    letter-spacing: 0.5px;
     text-transform: uppercase;
+    line-height: 1.2;
+    max-width: 200px;
 }
 
-/* Keep the main logo centered */
-.logo {
-    position: absolute;
-    left: 50%;
-    transform: translateX(-50%);
-    height: 55px;
+/* Center Section: Main Logo */
+.nav-centre {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Using standard flow instead of absolute to prevent overlap */
+.center-logo {
+    height: 100px; 
     width: auto;
+    transition: transform 0.3s ease;
+}
+
+.center-logo:hover {
+    transform: scale(1.1);
+}
+
+/* Right Section: Buttons/Menu */
+.nav-right {
+    flex: 1;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    gap: 15px;
 }
 
 .nav-login-btn {
     background: linear-gradient(90deg, #9b59b6, #8e44ad);
     color: white;
     border: none;
-    padding: 10px 25px;
+    padding: 8px 20px;
     border-radius: 25px;
     cursor: pointer;
     font-weight: 600;
-    transition: 0.3s;
+    white-space: nowrap;
 }
 
-.nav-login-btn:hover {
-    opacity: 0.9;
-    transform: scale(1.05);
-}
+/* --- MOBILE RESPONSIVE FIXES --- */
+@media (max-width: 768px) {
+    nav {
+        height: 70px;
+        padding: 0 10px;
+    }
 
-.logo {
-    height: 150px;
-    width: auto;
-}
+    /* Hide the long text on small phones to save space */
+    .college-full-name {
+        display: none; 
+    }
 
-.logo-text {
-    font-weight: 800;
-    font-size: 1.5rem;
-    letter-spacing: 2px;
-}
+    .sdm-icon {
+        height: 40px;
+    }
 
-.hamburger {
-    font-size: 1.5rem;
-    cursor: pointer;
-    color: black;
+    .center-logo {
+        height: 60px; /* Smaller logo for mobile */
+    }
+
+    .nav-login-btn {
+        padding: 6px 15px;
+        font-size: 12px;
+    }
 }
 
 /* --- DISCOVER SECTION --- */
@@ -531,20 +500,7 @@ body {
         margin-bottom: 20px !important;
     }
 }
-@media (max-width: 768px) {
-    nav {
-        padding: 0 20px; /* Smaller gap for mobile screens */
-    }
-    
-    .logo {
-        height: 40px; /* Shrink logo slightly for mobile */
-    }
 
-    .nav-login-btn {
-        padding: 8px 15px;
-        font-size: 14px;
-    }
-}
 /* The Back Button */
                     .back-btn {
                         display: inline-block;
